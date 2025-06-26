@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ class_name }} 掲示板</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ class_name }} の掲示板</h1>
+        <a href="{{ url_for('index') }}" class="back-link">← 授業一覧へ戻る</a>
+        <form method="POST" class="post-form">
+            <textarea name="content" placeholder="内容を入力してください..."></textarea>
+            <button type="submit">投稿する</button>
+        </form>
+        <ul class="post-list">
+            {% for post in posts %}
+                <li><span class="timestamp">{{ post.timestamp }}</span> {{ post.content | e }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
