@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>授業掲示板一覧</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>橘の情報工学科 掲示板</h1>
+        <ul class="class-list">
+            {% for class_name in classes %}
+                <li><a href="{{ url_for('class_board', class_name=class_name) }}">{{ class_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
