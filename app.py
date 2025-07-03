@@ -6,8 +6,8 @@ app = Flask(__name__)
 app.secret_key = "your-secret-key"  # セッション用（ランダム文字列でOK）
 
 # LINEログイン設定（自分のLINEチャネル情報を入力）
-CHANNEL_ID = ""
-CHANNEL_SECRET = "あなたのチャネルシークレット"
+CHANNEL_ID = "2007643838"
+CHANNEL_SECRET = "7bdea19f8f4a816cdd5e19c7bb6dbbbe"
 REDIRECT_URI = "https://your-app-name.onrender.com/callback"  # RenderのURLに合わせて
 
 # 授業リスト
