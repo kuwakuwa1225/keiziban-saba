@@ -8,7 +8,7 @@ app.secret_key = "your-secret-key"  # セッション用（ランダム文字列
 # LINEログイン設定（自分のLINEチャネル情報を入力）
 CHANNEL_ID = "2007643838"
 CHANNEL_SECRET = "7bdea19f8f4a816cdd5e19c7bb6dbbbe"
-REDIRECT_URI = "https://linebot-render-60ax.onrender.com"  # RenderのURLに合わせて
+REDIRECT_URI = "https://linebot-render-60ax.onrender.com/callback"  # RenderのURLに合わせて
 
 # 授業リスト
 classes = ["プログラミング演習", "基礎情報数学", "微分積分", "論理設計", "コンピュータ演習", "情報セキュリティ", "線形代数"]
@@ -29,7 +29,7 @@ def class_board(class_name):
         if content:
             post_id = len(class_posts[class_name]) + 1
             class_posts[class_name].append({
-                "id": post_id,
+                "id": post_id,b
                 "content": content,
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "author": session.get("user_name", "匿名")  # 投稿者名を記録
