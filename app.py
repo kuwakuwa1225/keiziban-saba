@@ -10,9 +10,7 @@ CHANNEL_ID = "2007643838"
 CHANNEL_SECRET = "7bdea19f8f4a816cdd5e19c7bb6dbbbe"
 REDIRECT_URI = "https%3A%2F%2Fkeiziban-saba.onrender.com/callback"
 
-profile = profile_res.json()
-user_id = profile.get('userId')
-print(f"ログインユーザーのLINE　ID:",user_id)
+
  
  
 @app.route("/callback")
