@@ -29,7 +29,7 @@ def class_board(class_name):
         if content:
             post_id = len(class_posts[class_name]) + 1
             class_posts[class_name].append({
-                "id": post_id,b
+                "id": post_id,
                 "content": content,
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "author": session.get("user_name", "匿名")  # 投稿者名を記録
