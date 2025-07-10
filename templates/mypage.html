@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>まにあ～る - ホーム</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px 40px;
+    }
+    header h1 { font-size: 24px; }
+    nav {
+      background-color: #00509e;
+      padding: 10px 40px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main { padding: 40px; }
+    section { margin-bottom: 40px; }
+    section h2 {
+      color: #00509e;
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th { background-color: #e0e0e0; }
+    input.timetable-cell {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      background-color: #f9f9f9;
+      font-size: 14px;
+    }
+    input.timetable-cell:focus {
+      outline: none;
+      background-color: #e6f0ff;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: #00509e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #003f7f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #eee;
+      }
+      header, footer {
+        background-color: #1e1e1e;
+        color: #ccc;
+      }
+      nav {
+        background-color: #2a2a2a;
+      }
+      nav a {
+        color: #bbb;
+      }
+      nav a:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+      section h2 {
+        color: #a0c4ff;
+      }
+      table {
+        border-color: #444;
+      }
+      th {
+        background-color: #333;
+        color: #ddd;
+      }
+      td {
+        background-color: #333;
+        color: #ddd;
+      }
+      input.timetable-cell {
+        background-color: #333;
+        color: #eee;
+      }
+      input.timetable-cell:focus {
+        background-color: #444;
+      }
+      button {
+        background-color: #3a7bd5;
+        color: white;
+      }
+      button:hover {
+        background-color: #2a5ca8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>まにあ～る 京都橘大学用</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="test.html">ホーム</a></li>
+      <li><a href="university-info.html">大学情報</a></li>
+      <li><a href="shuttle-bus.html">シャトルバス時刻表</a></li>
+      <li><a href="campus-map.html">校内MAP</a></li>
+      <li><a href="line-notify.html">LINE通知</a></li>
+      <li><a href="contact.html">掲示板</a></li>
+    </ul>
+  </nav>
+
+  <main role="main">
+    <section>
+      <h2>まにあ～るについて</h2>
+      <p>まにあ～るは、京都橘大学の生徒5人の力を合わせて作成されたWebサイトです。</p>
+    </section>
+
+    <section>
+      <h2>サービス紹介</h2>
+      <p>
+        カレンダー機能、大学情報、シャトルバス時刻表、大学内MAP、LINEでの通知などのサービスを提供しています。
+      </p>
+    </section>
+
+    <section>
+      <h2>時間割</h2>
+      <table id="timetable" role="table">
+        <thead>
+          <tr>
+            <th>時限＼曜日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1限</th>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="月"
+                data-period="1"
+                aria-label="月曜日 1げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="火"
+                data-period="1"
+                aria-label="火曜日 1げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="水"
+                data-period="1"
+                aria-label="水曜日 1げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="木"
+                data-period="1"
+                aria-label="木曜日 1げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="金"
+                data-period="1"
+                aria-label="金曜日 1げんの授業めい"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>2限</th>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="月"
+                data-period="2"
+                aria-label="月曜日 2げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="火"
+                data-period="2"
+                aria-label="火曜日 2げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="水"
+                data-period="2"
+                aria-label="水曜日 2げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="木"
+                data-period="2"
+                aria-label="木曜日 2げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="金"
+                data-period="2"
+                aria-label="金曜日 2げんの授業めい"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>3限</th>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="月"
+                data-period="3"
+                aria-label="月曜日 3げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="火"
+                data-period="3"
+                aria-label="火曜日 3げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="水"
+                data-period="3"
+                aria-label="水曜日 3げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="木"
+                data-period="3"
+                aria-label="木曜日 3げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="金"
+                data-period="3"
+                aria-label="金曜日 3げんの授業めい"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>4限</th>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="月"
+                data-period="4"
+                aria-label="月曜日 4げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="火"
+                data-period="4"
+                aria-label="火曜日 4げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="水"
+                data-period="4"
+                aria-label="水曜日 4げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="木"
+                data-period="4"
+                aria-label="木曜日 4げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="金"
+                data-period="4"
+                aria-label="金曜日 4げんの授業めい"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>5限</th>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="月"
+                data-period="5"
+                aria-label="月曜日 5げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="火"
+                data-period="5"
+                aria-label="火曜日 5げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="水"
+                data-period="5"
+                aria-label="水曜日 5げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="木"
+                data-period="5"
+                aria-label="木曜日 5げんの授業めい"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                class="timetable-cell"
+                data-day="金"
+                data-period="5"
+                aria-label="金曜日 5げんの授業めい"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" id="saveBtn">保存する</button>
+      <button type="button" id="sendBtn">LINEに送信</button>
+    </section>
+  </main>
+
+  <footer>京都橘大学生作 まにあ～る</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const supabaseUrl = 'https://mtmlxanzhctzufhraxhy.supabase.co';
+  const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im10bWx4YW56aGN0enVmaHJheGh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3MDIzNzEsImV4cCI6MjA2NTI3ODM3MX0.t2wfk9LwDFK1tuO9MrVhvFvi6frzgyor2FzMalEpsZo';
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+  const periodTimeMap = {
+    1: '09:00-09:50',
+    2: '10:00-10:50',
+    3: '11:00-11:50',
+    4: '13:00-13:50',
+    5: '14:00-14:50',
+  };
+
+  const user_id = '{{ line_user_id }}';
+
+  // データ挿入（送信・保存共通）
+  async function insertTimetableData() {
+    const inputs = document.querySelectorAll('.timetable-cell');
+    let successCount = 0;
+    let failCount = 0;
+
+    for (const input of inputs) {
+      const name = input.value.trim();
+      if (!name) continue;
+
+      const day_of_week = input.dataset.day;
+      const period = parseInt(input.dataset.period);
+      const time = periodTimeMap[period] || '';
+
+      const { error } = await supabase.from('subjects').insert({
+        name: name,
+        day_of_week: day_of_week,
+        time: time,
+        user_id: user_id,
+      });
+
+      if (error) {
+        console.error('送信失敗:', error);
+        failCount++;
+      } else {
+        successCount++;
+      }
+    }
+
+    return { successCount, failCount };
+  }
+
+  // 保存ボタン：既存データ削除→新規登録
+  async function overwriteTimetable() {
+    const { error: deleteError } = await supabase
+      .from('subjects')
+      .delete()
+      .eq('user_id', user_id);
+
+    if (deleteError) {
+      alert('既存データの削除に失敗しました');
+      console.error(deleteError);
+      return;
+    }
+
+    const { successCount, failCount } = await insertTimetableData();
+
+    alert(`保存完了\n成功: ${successCount}件\n失敗: ${failCount}件`);
+  }
+
+  // 送信ボタン：そのまま追加送信
+  async function sendTimetableToSupabase() {
+    const { successCount, failCount } = await insertTimetableData();
+    alert(`送信完了\n成功: ${successCount}件\n失敗: ${failCount}件`);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('sendBtn').addEventListener('click', sendTimetableToSupabase);
+    document.getElementById('saveBtn').addEventListener('click', overwriteTimetable);
+  });
+</script>
+</body>
+</html>
