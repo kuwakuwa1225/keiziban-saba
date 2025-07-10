@@ -56,6 +56,14 @@ def callback():
  
         # セッションに保存
         session["user_name"] = user_name
+
+
+     @app.route("/mypage")
+def mypage():
+    if "user_name" not in session:
+        return redirect(url_for("index"))  # 未ログインならトップページへ
+    return f"こんにちは、{session['user_name']}さん！ここはあなた専用のページです。"
+
  
         return redirect(url_for("index"))
  
